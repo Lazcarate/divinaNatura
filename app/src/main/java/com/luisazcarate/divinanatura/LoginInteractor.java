@@ -50,6 +50,7 @@ public class LoginInteractor implements ILoginInteractor {
                             //Si no fue un exito
                             callbacks.onFalloAuth(task.getException().toString());
 
+
                         }
                     }
                 });

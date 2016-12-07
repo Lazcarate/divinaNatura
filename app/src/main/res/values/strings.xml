@@ -5,4 +5,5 @@
     <string name="errorPassVacio">Password no puede estar vacio</string>
     <string name="errorPassNovalido">Password debe tener entre 4 y 7 carcteres</string>
     <string name="errorAutentificacion">Error de autenticacion</string>
+    <string name="errorTitle">Usuario no registrado</string>
 </resources>

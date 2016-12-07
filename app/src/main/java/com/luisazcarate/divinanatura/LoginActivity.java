@@ -1,10 +1,12 @@
 package com.luisazcarate.divinanatura;
 
 import android.app.ProgressDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.design.widget.Snackbar;
 import android.support.design.widget.TextInputEditText;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Editable;
@@ -164,17 +166,26 @@ public class LoginActivity extends AppCompatActivity implements IloginView {
     @Override
     public void showLoginError(String msg) {
 
-        //Construiremos una Snackbar para mostrar el mensaje de error
-        Snackbar.make(linearLog, msg, Snackbar.LENGTH_LONG).show();
+        AlertDialog.Builder builder = new AlertDialog.Builder(LoginActivity.this);
+        builder.setMessage(msg)
+                .setTitle(R.string.errorTitle)
+                .setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+
+                        OnSignUp();
+                    }
+                }).create().show();
+
 
     }
 
 
-    private void OnSignUp() {
+    public void OnSignUp() {
 
         Intent intent = new Intent(LoginActivity.this, SignUpActivity.class);
         startActivityForResult(intent, REQUEST_SIGNUP);
-        finish();
+        this.finish();
         overridePendingTransition(R.anim.push_left_in, R.anim.push_left_out);
 
     }
