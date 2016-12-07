@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">DivinaNatura</string>
+    <string name="errorEmailVacio">Email no puede estar vacio</string>
+    <string name="errorEmailIncorrecto">Email incorrecto</string>
+    <string name="errorPassVacio">Password no puede estar vacio</string>
+    <string name="errorPassNovalido">Password debe tener entre 4 y 7 carcteres</string>
+    <string name="errorAutentificacion">Error de autenticacion</string>
+</resources>

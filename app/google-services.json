@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "866529181313",
+    "firebase_url": "https://divinanatura-6eced.firebaseio.com",
+    "project_id": "divinanatura-6eced",
+    "storage_bucket": "divinanatura-6eced.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:866529181313:android:14be276cc7330468",
+        "android_client_info": {
+          "package_name": "com.luisazcarate.divinanatura"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "866529181313-f24sdae1pu8jhnubo0e1d924ntqduvc0.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.luisazcarate.divinanatura",
+            "certificate_hash": "74AC7A662FED96717B8D07E73CC86A46A909C1AB"
+          }
+        },
+        {
+          "client_id": "866529181313-vh06cmcaou0hm3heo1olbs27sete90lp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAkH8h7nbbCyQMEKWKUUGE0hUkg0aCWWMY"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "866529181313-vh06cmcaou0hm3heo1olbs27sete90lp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
