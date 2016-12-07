@@ -11,8 +11,7 @@
         android:layout_height="wrap_content"
         android:paddingTop="26dp"
         android:paddingLeft="24dp"
-        android:paddingRight="24dp"
-        android:id="@+id/linearLogin">
+        android:paddingRight="24dp">
 
         <ImageView android:src="@drawable/fond_pan2"
             android:layout_width="wrap_content"

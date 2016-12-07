@@ -37,8 +37,6 @@ public class LoginActivity extends AppCompatActivity implements IloginView {
     TextView enlaceRegistro;
     @Bind(R.id.login_progreso)
     ProgressBar progressBar;
-    @Bind(R.id.linearLogin)
-    LinearLayout linearLog;
     private ILoginPresenter mPresenter;
     private static final int REQUEST_SIGNUP = 0;
 

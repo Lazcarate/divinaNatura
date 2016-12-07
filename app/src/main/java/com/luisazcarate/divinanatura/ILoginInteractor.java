@@ -8,6 +8,7 @@ public interface ILoginInteractor {
 
     void login(String email, String pass, Callbacks callbacks);
 
+
     interface Callbacks {
 
         void onErrorEmail(String msg);
@@ -17,6 +18,8 @@ public interface ILoginInteractor {
         void onSuccess();
 
         void onFalloAuth(String msg);
+
+
 
     }
 }

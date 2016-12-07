@@ -22,6 +22,7 @@ public class LoginPresenter implements ILoginPresenter, ILoginInteractor.Callbac
         this.mLoginInteractor = new LoginInteractor();
     }
 
+
     @Override
     public void inicioSesion(String email, String password) {
 
@@ -60,7 +61,7 @@ public class LoginPresenter implements ILoginPresenter, ILoginInteractor.Callbac
         mLoginView.showLoginError(msg);
         //Debemos mandar a Registrarse
 
-
-
     }
+
+
 }

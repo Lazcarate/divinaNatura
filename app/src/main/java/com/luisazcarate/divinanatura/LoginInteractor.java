@@ -56,6 +56,7 @@ public class LoginInteractor implements ILoginInteractor {
                 });
     }
 
+
     public boolean isValidoEmail(String email, Callbacks callbacks){
 
         boolean esValido = true;
@@ -89,3 +90,4 @@ public class LoginInteractor implements ILoginInteractor {
 
 
 }
+
