@@ -24,7 +24,7 @@ public class SignUpPresenter implements ISignUpIPresenter, ISignUPInteractor.Cal
     @Override
     public void inicioRegistro(String nombre, String email, String password) {
 
-        mSignUpInteractor.signUp(nombre, email, password, this);
+        mSignUpInteractor.inicioSesion(nombre, email, password, this);
 
 
     }
@@ -50,6 +50,12 @@ public class SignUpPresenter implements ISignUpIPresenter, ISignUPInteractor.Cal
     public void onFalloAuth(String msg) {
 
         mSignUpView.showSignUpError(msg);
+
+
+    }
+
+    @Override
+    public void onErrorNombre(String msg) {
 
 
     }

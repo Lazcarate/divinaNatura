@@ -6,4 +6,6 @@
     <string name="errorPassNovalido">Password debe tener entre 4 y 7 carcteres</string>
     <string name="errorAutentificacion">Error de autenticacion</string>
     <string name="errorTitle">Usuario no registrado</string>
+    <string name="errorTitleRegistro">Error de registrado</string>
+    <string name="menu_logout">Cerrar Sesion</string>
 </resources>

@@ -60,19 +60,9 @@ public class SignUpActivity extends AppCompatActivity implements ISignUpView{
 
         AlertDialog.Builder builder = new AlertDialog.Builder(SignUpActivity.this);
         builder.setMessage(msg)
-                .setTitle(R.string.errorTitle)
-                .setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-
-                        aLogin();
-                    }
-                }).create().show();
-
-
+                .setTitle(R.string.errorTitleRegistro)
+                .setPositiveButton(android.R.string.ok, null).create().show();
     }
-
-
 
     @Override
     public void setEmailError(String msg) {
