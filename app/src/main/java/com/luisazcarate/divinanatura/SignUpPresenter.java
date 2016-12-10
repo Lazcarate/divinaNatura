@@ -54,9 +54,5 @@ public class SignUpPresenter implements ISignUpIPresenter, ISignUPInteractor.Cal
 
     }
 
-    @Override
-    public void onErrorNombre(String msg) {
 
-
-    }
 }

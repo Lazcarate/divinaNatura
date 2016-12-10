@@ -18,6 +18,6 @@ public interface ISignUPInteractor {
 
         void onFalloAuth(String msg);
 
-        void onErrorNombre(String msg);
+
     }
 }
