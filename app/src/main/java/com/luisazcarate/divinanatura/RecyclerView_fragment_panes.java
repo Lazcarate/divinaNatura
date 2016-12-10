@@ -14,12 +14,12 @@ import android.view.ViewGroup;
 public class RecyclerView_fragment_panes extends Fragment{
 
     public RecyclerView_fragment_panes() {
+        super();
     }
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-
 
         return inflater.inflate(R.layout.fragment_panes, container, false);
     }
