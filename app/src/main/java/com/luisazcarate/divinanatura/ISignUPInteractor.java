@@ -6,7 +6,7 @@ package com.luisazcarate.divinanatura;
 
 public interface ISignUPInteractor {
 
-    void inicioSesion(String nombre, String email, String pass, ISignUPInteractor.Callbacks callbacks);
+    void inicioSesion(String email, String pass, ISignUPInteractor.Callbacks callbacks);
 
     interface Callbacks{
 

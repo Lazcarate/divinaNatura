@@ -80,7 +80,7 @@ public class SignUpActivity extends AppCompatActivity implements ISignUpView{
         String mail = email_Registro.getText().toString().trim();
         String pass = pass_Registro.getText().toString().trim();
 
-        mSignupPresenter.inicioRegistro(nom, mail, pass);
+        mSignupPresenter.inicioRegistro(mail, pass);
 
     }
 

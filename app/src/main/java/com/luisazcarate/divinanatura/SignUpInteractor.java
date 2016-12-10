@@ -58,7 +58,7 @@ public class SignUpInteractor implements ISignUPInteractor {
         return esValido ;
 
     }
-    private boolean isValidoNombre(String nom, ISignUPInteractor.Callbacks callbacks){
+    /*private boolean isValidoNombre(String nom, ISignUPInteractor.Callbacks callbacks){
 
         boolean esValido = true;
 
@@ -68,24 +68,28 @@ public class SignUpInteractor implements ISignUPInteractor {
         }
         return esValido ;
 
-    }
+    }*/
 
     public void inicioSesion (String nom, String email, String pass, final Callbacks callbacks){
 
-        boolean checkNom = isValidoNombre(nom, callbacks);
+        //boolean checkNom = isValidoNombre(nom, callbacks);
         boolean checkEmail = isValidoEmail(email, callbacks);
         boolean checkPass = isValidoPassword(pass, callbacks);
 
-        if(!(checkNom && checkEmail && checkPass)){
+       /* if(!(checkNom && checkEmail && checkPass)){
+            return;
+        }*/
+        if(!(checkEmail && checkPass)){
             return;
         }
 
-        signUp(nom, email, pass, callbacks);
+       // signUp(nom, email, pass, callbacks);
+        signUp(email, pass, callbacks);
 
     }
 
 
-    private void signUp(String nom, String email, String pass, final Callbacks callbacks) {
+    private void signUp(String email, String pass, final Callbacks callbacks) {
 
         mFirebaseAuth.createUserWithEmailAndPassword(email, pass)
                 .addOnCompleteListener(new OnCompleteListener<AuthResult>() {

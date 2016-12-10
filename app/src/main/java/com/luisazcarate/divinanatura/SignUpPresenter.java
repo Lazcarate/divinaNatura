@@ -22,9 +22,9 @@ public class SignUpPresenter implements ISignUpIPresenter, ISignUPInteractor.Cal
     }
 
     @Override
-    public void inicioRegistro(String nombre, String email, String password) {
+    public void inicioRegistro(String email, String password) {
 
-        mSignUpInteractor.inicioSesion(nombre, email, password, this);
+        mSignUpInteractor.inicioSesion(email, password, this);
 
 
     }
