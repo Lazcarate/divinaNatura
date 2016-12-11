@@ -8,4 +8,5 @@
     <string name="errorTitle">Usuario no registrado</string>
     <string name="errorTitleRegistro">Error de registrado</string>
     <string name="menu_logout">Cerrar Sesion</string>
+    <string name="nombre">nombre</string>
 </resources>

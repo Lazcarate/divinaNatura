@@ -1,15 +1,17 @@
 package com.luisazcarate.divinanatura.modelo;
 
+import org.parceler.Parcel;
+
 /**
  * Created by Luis on 10/12/16.
  */
-
+@Parcel
 public class Pan {
 
-    private String nombre;
-    private String descripcion;
-    private String url_foto;
-    private String idPan;
+    String nombre;
+    String descripcion;
+    String url_foto;
+    String idPan;
 
     public Pan() {
     }
