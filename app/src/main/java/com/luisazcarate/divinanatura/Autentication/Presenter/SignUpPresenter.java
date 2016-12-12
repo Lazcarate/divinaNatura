@@ -1,6 +1,10 @@
-package com.luisazcarate.divinanatura;
+package com.luisazcarate.divinanatura.Autentication.Presenter;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.luisazcarate.divinanatura.Autentication.Interactor.ISignUPInteractor;
+import com.luisazcarate.divinanatura.Autentication.Interactor.SignUpInteractor;
+import com.luisazcarate.divinanatura.Autentication.Presenter.ISignUpIPresenter;
+import com.luisazcarate.divinanatura.Autentication.View.ISignUpView;
 
 /**
  * Created by Luis on 7/12/16.

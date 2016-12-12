@@ -1,6 +1,5 @@
-package com.luisazcarate.divinanatura;
+package com.luisazcarate.divinanatura.Autentication.View;
 
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.design.widget.TextInputEditText;
 import android.support.v7.app.AlertDialog;
@@ -10,10 +9,13 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.luisazcarate.divinanatura.R;
+import com.luisazcarate.divinanatura.Autentication.Presenter.SignUpPresenter;
+
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
-public class SignUpActivity extends AppCompatActivity implements ISignUpView{
+public class SignUpActivity extends AppCompatActivity implements ISignUpView {
 
     @Bind(R.id.input_name)TextInputEditText nombre_Registro;
     @Bind(R.id.input_password)TextInputEditText pass_Registro;

@@ -88,7 +88,7 @@ public class ProductosActivity extends AppCompatActivity {
 
         viewPager.setAdapter(fragmentPagerAdapter);
         tabLayout.setupWithViewPager(viewPager);
-        tabLayout.getTabAt(0);
+        tabLayout.getTabAt(0).setIcon(R.drawable.pan);
         tabLayout.getTabAt(1);
 
     }

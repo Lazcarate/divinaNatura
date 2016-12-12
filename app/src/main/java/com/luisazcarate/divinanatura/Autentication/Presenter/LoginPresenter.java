@@ -1,8 +1,10 @@
-package com.luisazcarate.divinanatura;
-
-import android.content.Context;
+package com.luisazcarate.divinanatura.Autentication.Presenter;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.luisazcarate.divinanatura.Autentication.Interactor.ILoginInteractor;
+import com.luisazcarate.divinanatura.Autentication.Interactor.LoginInteractor;
+import com.luisazcarate.divinanatura.Autentication.Presenter.ILoginPresenter;
+import com.luisazcarate.divinanatura.Autentication.View.IloginView;
 
 /**
  * Created by Luis on 5/12/16.

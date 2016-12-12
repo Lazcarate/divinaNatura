@@ -1,4 +1,4 @@
-package com.luisazcarate.divinanatura;
+package com.luisazcarate.divinanatura.Autentication.View;
 
 /**
  * Created by Luis on 7/12/16.
