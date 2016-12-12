@@ -10,17 +10,20 @@ public class Pan {
 
     String nombre;
     String descripcion;
-    String url_foto;
-    String idPan;
+    String foto;
+    String peso;
+    String precio;
+
 
     public Pan() {
     }
 
-    public Pan(String idPan, String nombre, String descripcion, String url_foto) {
-        this.idPan = idPan;
+    public Pan(String nombre, String descripcion, String foto, String peso, String precio) {
         this.nombre = nombre;
         this.descripcion = descripcion;
-        this.url_foto = url_foto;
+        this.foto = foto;
+        this.peso = peso;
+        this.precio = precio;
     }
 
     public String getNombre() {
@@ -31,12 +34,18 @@ public class Pan {
         return descripcion;
     }
 
-    public String getUrl_foto() {
-        return url_foto;
+
+
+    public String getFoto() {
+        return foto;
     }
 
-    public String getIdPan() {
-        return idPan;
+    public String getPeso() {
+        return peso;
+    }
+
+    public String getPrecio() {
+        return precio;
     }
 
     public void setNombre(String nombre) {
@@ -47,11 +56,15 @@ public class Pan {
         this.descripcion = descripcion;
     }
 
-    public void setUrl_foto(String url_foto) {
-        this.url_foto = url_foto;
+    public void setFoto(String foto) {
+        this.foto = foto;
     }
 
-    public void setIdPan(String idPan) {
-        this.idPan = idPan;
+    public void setPeso(String peso) {
+        this.peso = peso;
+    }
+
+    public void setPrecio(String precio) {
+        this.precio = precio;
     }
 }

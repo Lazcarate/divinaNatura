@@ -12,61 +12,35 @@ import com.luisazcarate.divinanatura.R;
 import com.luisazcarate.divinanatura.modelo.Pan;
 import com.squareup.picasso.Picasso;
 
-import java.util.ArrayList;
-import java.util.zip.Inflater;
 
-import butterknife.Bind;
-import butterknife.ButterKnife;
 
 /**
  * Created by Luis on 10/12/16.
  */
 
-public class Panes_Adapter extends RecyclerView.Adapter<Panes_Adapter.PanViewHolder>{
+public class Panes_Adapter extends RecyclerView.ViewHolder{
 
-    private Context mContext;
-    private ArrayList<Pan> mPanes = new ArrayList<>();
+    Context mContext;
+    View view;
 
-    public Panes_Adapter(Context mContext, ArrayList<Pan> mPanes) {
-        this.mContext = mContext;
-        this.mPanes = mPanes;
+
+    public Panes_Adapter(View itemView) {
+        super(itemView);
+        view = itemView;
+        mContext = view.getContext();
+
     }
+    public void BindPan(Pan mPan) {
 
-    @Override
-    public PanViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        ImageView imgPan = (ImageView) view.findViewById(R.id.imgPan);
+        TextView txtNombre = (TextView) view.findViewById(R.id.tvNombreCV);
 
-        View v = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.pan_list_item, parent, false);
-
-        return new PanViewHolder(v);
-    }
-
-    @Override
-    public void onBindViewHolder(PanViewHolder holder, int position) {
-
-        Pan mPan = mPanes.get(position);
-        Picasso.with(mContext).load(mPan.getUrl_foto())
+        Picasso.with(mContext).load(mPan.getFoto())
                 .placeholder(R.drawable.pan)
                 .error(R.drawable.pan)
-                .into(holder.imgPan);
-        holder.tvNombre.setText(mPan.getNombre());
+                .into(imgPan);
+        txtNombre.setText(mPan.getNombre());
 
     }
 
-    @Override
-    public int getItemCount() {
-        return mPanes.size();
-    }
-
-    public static class PanViewHolder extends RecyclerView.ViewHolder{
-
-        @Bind(R.id.imgPan) ImageView imgPan;
-        @Bind(R.id.tvNombreCV) TextView tvNombre;
-
-
-        public PanViewHolder(View itemView) {
-            super(itemView);
-            ButterKnife.bind(this, itemView);
-        }
-    }
 }

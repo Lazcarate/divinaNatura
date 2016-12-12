@@ -7,4 +7,5 @@ package com.luisazcarate.divinanatura;
 public final class Constantes{
 
     public static final String REF_PEDIDOS = "cantidad";
+    public static final String REF_PANES = "panes";
 }
