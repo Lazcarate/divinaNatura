@@ -55,6 +55,7 @@ public class Panes_Adapter extends RecyclerView.ViewHolder{
                 Intent intent = new Intent(mContext, Detalle_Pan_Activity.class);
                 intent.putExtra("mPan", Parcels.wrap(mPan));
                 mContext.startActivity(intent);
+
             }
         });
 

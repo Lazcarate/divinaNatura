@@ -2,12 +2,19 @@ package com.luisazcarate.divinanatura;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.luisazcarate.divinanatura.modelo.Pan;
+import com.luisazcarate.divinanatura.modelo.Pedido;
 import com.squareup.picasso.Picasso;
 
 import org.parceler.Parcels;
@@ -16,12 +23,13 @@ import org.w3c.dom.Text;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
+import static com.luisazcarate.divinanatura.R.id.edtCantidad;
 import static com.luisazcarate.divinanatura.R.id.imgPan;
 import static com.luisazcarate.divinanatura.R.id.tvDescripcion_Detalle;
 import static com.luisazcarate.divinanatura.R.id.tvPeso;
 import static com.luisazcarate.divinanatura.R.id.tvPrecio;
 
-public class Detalle_Pan_Activity extends AppCompatActivity {
+public class Detalle_Pan_Activity extends AppCompatActivity implements View.OnClickListener{
 
     private static final int MAX_WIDTH = 170;
     private static final int MAX_HEIGHT = 130;
@@ -41,12 +49,23 @@ public class Detalle_Pan_Activity extends AppCompatActivity {
     EditText edCantidad;
     @Bind(R.id.btnPedir)
     Button btnquiero;
+    private DatabaseReference mDataBase;
+    private FirebaseUser mFirebaseUser;
+    private FirebaseAuth mFirebaseAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detalle_pan);
         ButterKnife.bind(this);
+        btnquiero.setOnClickListener(this);
+        mFirebaseAuth = FirebaseAuth.getInstance();
+        mFirebaseUser = mFirebaseAuth.getCurrentUser();
+        setUpDetalle();
+    }
+
+    private void setUpDetalle() {
+
         Pan panDetalle = (Pan) Parcels.unwrap(getIntent().getParcelableExtra("mPan"));
 
         Picasso.with(Detalle_Pan_Activity.this)
@@ -61,4 +80,28 @@ public class Detalle_Pan_Activity extends AppCompatActivity {
         nombrePan_Detalle.setText(panDetalle.getNombre());
         txtPeso.setText(panDetalle.getPeso());
     }
+
+    @Override
+    public void onClick(View view) {
+
+        hacerPedido();
+        finish();
+
+    }
+
+    private void hacerPedido() {
+
+        mDataBase = FirebaseDatabase.getInstance().getReference().child(Constantes.REF_PEDIDOS);
+        String NombrePan = nombrePan_Detalle.getText().toString();
+        int cant = Integer.valueOf(edCantidad.getText().toString());
+        String emailUs = mFirebaseUser.getEmail();
+        Pedido ped = new Pedido(NombrePan, cant, emailUs);
+        mDataBase.push().setValue(ped);
+
+        edCantidad.setText("");
+
+        Toast.makeText(this, "Pedido Realizado", Toast.LENGTH_SHORT).show();
+
+    }
+
 }

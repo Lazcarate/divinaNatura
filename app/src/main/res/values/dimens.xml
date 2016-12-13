@@ -3,6 +3,6 @@
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">10dp</dimen>
     <dimen name="left">10dp</dimen>
-    <dimen name="nombre_cardview">20sp</dimen>
+    <dimen name="nombre_cardview">20dp</dimen>
     <dimen name="corner_radius_cardview">4dp</dimen>
 </resources>
