@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.luisazcarate.divinanatura">
-    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -12,11 +13,13 @@
         <activity android:name=".Autentication.View.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity android:name=".ProductosActivity" />
-        <activity android:name=".Autentication.View.SignUpActivity"></activity>
+        <activity android:name=".Autentication.View.SignUpActivity" />
+        <activity android:name=".Detalle_Pan_Activity"></activity>
     </application>
 
 </manifest>

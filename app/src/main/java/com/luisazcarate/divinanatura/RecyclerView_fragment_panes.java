@@ -71,8 +71,8 @@ public class RecyclerView_fragment_panes extends Fragment{
     }
 
     @Override
-    public void onDestroyView() {
-        super.onDestroyView();
+    public void onDestroy() {
+        super.onDestroy();
         mFirebaseAdapter.cleanup();
     }
 }
