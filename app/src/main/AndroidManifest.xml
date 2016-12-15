@@ -11,13 +11,19 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".Autentication.View.LoginActivity">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ProductosActivity" />
+        <activity android:name=".ProductosActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Autentication.View.LoginActivity"/>
+        </activity>
+
         <activity android:name=".Autentication.View.SignUpActivity" />
         <activity android:name=".Detalle_Pan_Activity" />
 

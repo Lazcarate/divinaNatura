@@ -15,15 +15,17 @@
 
         <android.support.v7.widget.Toolbar
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="78dp"
             android:id="@+id/toolbar"
-            app:layout_scrollFlags="scroll|enterAlways"/>
+            app:layout_scrollFlags="scroll|enterAlways"
+            android:background="@color/primary_dark"
+            android:textAlignment="center"/>
 
         <android.support.design.widget.TabLayout
 
             android:id="@+id/tabLayout"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="36dp" />
 
     </android.support.design.widget.AppBarLayout>
 

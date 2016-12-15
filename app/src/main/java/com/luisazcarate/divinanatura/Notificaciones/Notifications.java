@@ -18,27 +18,30 @@ import com.luisazcarate.divinanatura.R;
 
 public class Notifications extends FirebaseMessagingService {
 
+    public Notifications() {
+    }
+
     @Override
     public void onMessageReceived(RemoteMessage remoteMessage) {
         super.onMessageReceived(remoteMessage);
 
         if(remoteMessage.getNotification() != null){
 
-            mostrarNotificacion(remoteMessage.getNotification().getTitle(),
-                    remoteMessage.getNotification().getBody());
+            mostrarNotificacion(remoteMessage.getNotification().getBody());
         }
     }
 
-    private void mostrarNotificacion(String titulo, String cuerpo) {
+    private void mostrarNotificacion(String cuerpo) {
 
         Intent intent = new Intent(this, NotificacionActivity.class);
+        intent.putExtra("cuerpo", cuerpo);
         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);//Reorganiza la pila de actividades.
-        PendingIntent pendIntent = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_ONE_SHOT);
+        PendingIntent pendIntent = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
         Uri uriSound = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
         NotificationCompat.Builder notificacion = new NotificationCompat.Builder(this)
+                .setAutoCancel(true)
                 .setSmallIcon(R.drawable.pan)
-                .setContentTitle(titulo)
-                .setContentText(cuerpo)
+                .setContentTitle("Mensaje de Divina Natura")
                 .setSound(uriSound)
                 .setContentIntent(pendIntent);
         NotificationManager noti = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);

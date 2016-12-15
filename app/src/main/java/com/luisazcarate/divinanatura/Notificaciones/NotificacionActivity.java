@@ -12,8 +12,9 @@ import butterknife.ButterKnife;
 
 public class NotificacionActivity extends AppCompatActivity {
 
-    @Bind(R.id.tvNotificacion)
-    TextView tvnotify;
+
+    @Bind(R.id.tvNotifiCuerpo)
+    TextView tvnotidyBody;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,13 +27,13 @@ public class NotificacionActivity extends AppCompatActivity {
 
     private void mostrarNotificacion() {
 
-        if(getIntent().getExtras() != null){
-            for(String key: getIntent().getExtras().keySet()){
-                String valor = getIntent().getExtras().getString(key);
-                tvnotify.append("Tiulo" + key + "\n" + "Descripcion:" + valor);
+        if(getIntent().hasExtra("cuerpo")){
+                String valor = getIntent().getStringExtra("cuerpo");
+                tvnotidyBody.setText(valor);
+            return;
             }
         }
     }
 
 
-}
+

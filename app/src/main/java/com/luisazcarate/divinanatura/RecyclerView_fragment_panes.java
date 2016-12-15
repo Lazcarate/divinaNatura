@@ -27,9 +27,9 @@ import butterknife.ButterKnife;
  * Created by Luis on 9/12/16.
  */
 
-public class RecyclerView_fragment_panes extends Fragment{
+public class RecyclerView_fragment_panes extends Fragment {
 
-    private ArrayList<Pan>panes;
+    private ArrayList<Pan> panes;
     @Bind(R.id.rvPanes)
     RecyclerView recyclerViewPanes;
     private DatabaseReference mPanReference;
@@ -73,6 +73,8 @@ public class RecyclerView_fragment_panes extends Fragment{
     @Override
     public void onDestroy() {
         super.onDestroy();
-        mFirebaseAdapter.cleanup();
+        if (mFirebaseAdapter != null) {
+            mFirebaseAdapter.cleanup();
+        }
     }
 }
