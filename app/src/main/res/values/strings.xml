@@ -9,4 +9,5 @@
     <string name="errorTitleRegistro">Error de registrado</string>
     <string name="menu_logout">Cerrar Sesion</string>
     <string name="nombre">Centeno y trigo con frutas</string>
+    <string name="enviar">Send</string>
 </resources>

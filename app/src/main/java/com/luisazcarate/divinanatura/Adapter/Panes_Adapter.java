@@ -1,11 +1,16 @@
 package com.luisazcarate.divinanatura.Adapter;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.os.Build;
+import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v7.widget.RecyclerView;
+import android.transition.Explode;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -28,6 +33,7 @@ public class Panes_Adapter extends RecyclerView.ViewHolder{
 
     Context mContext;
     View view;
+    Activity activity;
 
 
     public Panes_Adapter(View itemView) {
@@ -54,12 +60,19 @@ public class Panes_Adapter extends RecyclerView.ViewHolder{
 
                 Intent intent = new Intent(mContext, Detalle_Pan_Activity.class);
                 intent.putExtra("mPan", Parcels.wrap(mPan));
+               /* if((Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP)){
+                   //activity.getWindow().requestFeature(Window.FEATURE_CONTENT_TRANSITIONS);
+                    activity.getWindow().setExitTransition(new Explode());
+                    mContext.startActivity(intent, ActivityOptionsCompat
+                            .makeSceneTransitionAnimation(activity, view, "").toBundle());
+                }
+                else
+                {*/
                 mContext.startActivity(intent);
 
             }
-        });
-
+        }
+    );
     }
-
 
 }

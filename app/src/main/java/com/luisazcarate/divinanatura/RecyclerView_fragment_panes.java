@@ -29,7 +29,6 @@ import butterknife.ButterKnife;
 
 public class RecyclerView_fragment_panes extends Fragment {
 
-    private ArrayList<Pan> panes;
     @Bind(R.id.rvPanes)
     RecyclerView recyclerViewPanes;
     private DatabaseReference mPanReference;

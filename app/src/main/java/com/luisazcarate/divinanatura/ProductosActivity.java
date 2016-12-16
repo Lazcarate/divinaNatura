@@ -68,7 +68,8 @@ public class ProductosActivity extends AppCompatActivity {
 
             Fragment[] fragments = new Fragment[]{
                     new RecyclerView_fragment_panes(),
-                    new RecyclerView_fragment_otros()
+                    new RecyclerView_fragment_tartas(),
+                    new RecyclerView_fragment_chat()
             };
 
             @Override
@@ -90,6 +91,7 @@ public class ProductosActivity extends AppCompatActivity {
         tabLayout.setupWithViewPager(viewPager);
         tabLayout.getTabAt(0).setIcon(R.drawable.pan_48);
         tabLayout.getTabAt(1).setIcon(R.drawable.cupcake_48);
+        tabLayout.getTabAt(2);
 
     }
 
