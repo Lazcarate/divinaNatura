@@ -10,15 +10,10 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
-import com.luisazcarate.divinanatura.Adapter.Panes_Adapter;
+import com.luisazcarate.divinanatura.Adapter.Panes_ViewHolder;
 import com.luisazcarate.divinanatura.modelo.Pan;
-
-import java.util.ArrayList;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -45,7 +40,7 @@ public class RecyclerView_fragment_panes extends Fragment {
 
         View view = inflater.inflate(R.layout.fragment_panes, container, false);
         ButterKnife.bind(this, view);
-        mPanReference = FirebaseDatabase.getInstance().getReference(Constantes.REF_PANES);
+        mPanReference = FirebaseDatabase.getInstance().getReference().child(Constantes.REF_PANES);
         setUpFireBaseAdapter();
 
         return view;
@@ -53,10 +48,10 @@ public class RecyclerView_fragment_panes extends Fragment {
 
     private void setUpFireBaseAdapter() {
 
-        mFirebaseAdapter = new FirebaseRecyclerAdapter<Pan, Panes_Adapter>(Pan.class, R.layout.pan_list_item,
-                Panes_Adapter.class, mPanReference) {
+        mFirebaseAdapter = new FirebaseRecyclerAdapter<Pan, Panes_ViewHolder>(Pan.class, R.layout.pan_list_item,
+                Panes_ViewHolder.class, mPanReference) {
             @Override
-            protected void populateViewHolder(Panes_Adapter viewHolder, Pan model, int position) {
+            protected void populateViewHolder(Panes_ViewHolder viewHolder, Pan model, int position) {
 
                 viewHolder.BindPan(model);
             }

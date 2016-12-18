@@ -91,7 +91,7 @@ public class ProductosActivity extends AppCompatActivity {
         tabLayout.setupWithViewPager(viewPager);
         tabLayout.getTabAt(0).setIcon(R.drawable.pan_48);
         tabLayout.getTabAt(1).setIcon(R.drawable.cupcake_48);
-        tabLayout.getTabAt(2);
+        tabLayout.getTabAt(2).setIcon(R.drawable.charla_48);
 
     }
 

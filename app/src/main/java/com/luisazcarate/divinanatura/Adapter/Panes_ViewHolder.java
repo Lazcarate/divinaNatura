@@ -26,26 +26,27 @@ import org.parceler.Parcels;
  * Created by Luis on 10/12/16.
  */
 
-public class Panes_Adapter extends RecyclerView.ViewHolder{
+public class Panes_ViewHolder extends RecyclerView.ViewHolder{
 
     private static final int MAX_WIDTH = 170;
     private static final int MAX_HEIGHT = 130;
 
     Context mContext;
     View view;
-    Activity activity;
+    private ImageView imgPan;
+    private TextView txtNombre;
 
 
-    public Panes_Adapter(View itemView) {
+    public Panes_ViewHolder(View itemView) {
+
         super(itemView);
         view = itemView;
         mContext = view.getContext();
+        imgPan = (ImageView) view.findViewById(R.id.imgPan);
+        txtNombre = (TextView) view.findViewById(R.id.tvNombreCV);
 
     }
     public void BindPan(final Pan mPan) {
-
-        ImageView imgPan = (ImageView) view.findViewById(R.id.imgPan);
-        TextView txtNombre = (TextView) view.findViewById(R.id.tvNombreCV);
 
         Picasso.with(mContext)
                 .load(mPan.getFoto())

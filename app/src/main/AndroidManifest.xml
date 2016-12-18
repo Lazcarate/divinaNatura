@@ -11,7 +11,6 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".Autentication.View.LoginActivity">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -21,9 +20,8 @@
         <activity android:name=".ProductosActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".Autentication.View.LoginActivity"/>
+                android:value=".Autentication.View.LoginActivity" />
         </activity>
-
         <activity android:name=".Autentication.View.SignUpActivity" />
         <activity android:name=".Detalle_Pan_Activity" />
 
@@ -33,7 +31,12 @@
             </intent-filter>
         </service>
 
-        <activity android:name=".Notificaciones.NotificacionActivity"></activity>
+        <activity android:name=".Notificaciones.NotificacionActivity" />
+        <activity android:name=".ChatActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ProductosActivity" />
+        </activity>
     </application>
 
 </manifest>
