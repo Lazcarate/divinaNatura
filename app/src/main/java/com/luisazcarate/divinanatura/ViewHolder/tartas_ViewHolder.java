@@ -50,7 +50,6 @@ public class Tartas_ViewHolder extends RecyclerView.ViewHolder {
         imgTarta.setOnClickListener(new View.OnClickListener() {
                                       @Override
                                       public void onClick(View view) {
-
                                           Intent intent = new Intent(mContext, Detalle_Tarta_Activity.class);
                                           intent.putExtra("mTarta", Parcels.wrap(mTarta));
                                           mContext.startActivity(intent);

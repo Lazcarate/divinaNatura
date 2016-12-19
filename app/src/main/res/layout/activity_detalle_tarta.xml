@@ -15,7 +15,7 @@
             android:layout_width="match_parent"
             android:layout_height="220dp"
             android:id="@+id/imgTarta"
-            android:src="@drawable/carrot_cake"
+            android:src="@drawable/fondo_pan"
             android:scaleType="centerCrop" />
 
         <LinearLayout

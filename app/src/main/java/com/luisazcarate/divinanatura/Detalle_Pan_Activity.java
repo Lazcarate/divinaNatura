@@ -16,18 +16,11 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.luisazcarate.divinanatura.modelo.Pan;
 import com.luisazcarate.divinanatura.modelo.Pedido;
 import com.squareup.picasso.Picasso;
-
 import org.parceler.Parcels;
-import org.w3c.dom.Text;
-
 import butterknife.Bind;
 import butterknife.ButterKnife;
-
-import static com.luisazcarate.divinanatura.R.id.edtCantidad;
 import static com.luisazcarate.divinanatura.R.id.imgPan;
-import static com.luisazcarate.divinanatura.R.id.tvDescripcion_Detalle;
-import static com.luisazcarate.divinanatura.R.id.tvPeso;
-import static com.luisazcarate.divinanatura.R.id.tvPrecio;
+
 
 public class Detalle_Pan_Activity extends AppCompatActivity implements View.OnClickListener{
 
@@ -66,7 +59,7 @@ public class Detalle_Pan_Activity extends AppCompatActivity implements View.OnCl
 
     private void setUpDetalle() {
 
-        Pan panDetalle = (Pan) Parcels.unwrap(getIntent().getParcelableExtra("mPan"));
+        Pan panDetalle = Parcels.unwrap(getIntent().getParcelableExtra("mPan"));
 
         Picasso.with(Detalle_Pan_Activity.this)
                 .load(panDetalle.getFoto())
@@ -77,7 +70,6 @@ public class Detalle_Pan_Activity extends AppCompatActivity implements View.OnCl
         nombrePan_Detalle.setText(panDetalle.getNombre());
         tvPrecio.setText(panDetalle.getPrecio());
         tvdescripcion.setText(panDetalle.getDescripcion());
-        nombrePan_Detalle.setText(panDetalle.getNombre());
         txtPeso.setText(panDetalle.getPeso());
     }
 

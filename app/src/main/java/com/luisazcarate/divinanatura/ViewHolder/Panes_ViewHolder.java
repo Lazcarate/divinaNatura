@@ -54,14 +54,6 @@ public class Panes_ViewHolder extends RecyclerView.ViewHolder{
 
                 Intent intent = new Intent(mContext, Detalle_Pan_Activity.class);
                 intent.putExtra("mPan", Parcels.wrap(mPan));
-               /* if((Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP)){
-                   //activity.getWindow().requestFeature(Window.FEATURE_CONTENT_TRANSITIONS);
-                    activity.getWindow().setExitTransition(new Explode());
-                    mContext.startActivity(intent, ActivityOptionsCompat
-                            .makeSceneTransitionAnimation(activity, view, "").toBundle());
-                }
-                else
-                {*/
                 mContext.startActivity(intent);
 
             }

@@ -12,10 +12,10 @@ import android.view.ViewGroup;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.luisazcarate.divinanatura.ViewHolder.Panes_ViewHolder;
 import com.luisazcarate.divinanatura.ViewHolder.Tartas_ViewHolder;
-import com.luisazcarate.divinanatura.modelo.Pan;
 import com.luisazcarate.divinanatura.modelo.Tarta;
+
+
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
