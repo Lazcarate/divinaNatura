@@ -6,11 +6,10 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
-import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
-import com.luisazcarate.divinanatura.Adapter.Chat_ViewHolder;
+import com.luisazcarate.divinanatura.ViewHolder.Chat_ViewHolder;
 import com.luisazcarate.divinanatura.modelo.Chat;
 
 import butterknife.Bind;

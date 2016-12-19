@@ -1,56 +1,56 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/activity_detalle__pan_"
+    android:id="@+id/detalle_tarta_"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.luisazcarate.divinanatura.Detalle_Pan_Activity">
+    tools:context="com.luisazcarate.divinanatura.Detalle_Tarta_Activity">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:background="@color/primary">
 
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="220dp"
-        android:id="@+id/imgPan"
-        android:src="@drawable/fondo_pan"
-        android:scaleType="centerCrop" />
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="220dp"
+            android:id="@+id/imgTarta"
+            android:src="@drawable/carrot_cake"
+            android:scaleType="centerCrop" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="80dp"
-        android:orientation="vertical"
-        android:padding="7dp"
-        android:background="@color/white"
-        android:paddingLeft="30dp"
-        android:paddingTop="20dp"
-        android:paddingRight="30dp"
-        android:paddingBottom="20dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:orientation="vertical"
+            android:padding="7dp"
+            android:background="@color/white"
+            android:paddingLeft="30dp"
+            android:paddingTop="20dp"
+            android:paddingRight="30dp"
+            android:paddingBottom="20dp">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/tvnombrePan_Detalle"
-            android:text="Nombre Pan"
-            android:textStyle="bold"
-            android:textSize="20dp"
-            android:textColor="@color/primary_dark"
-            android:layout_gravity="center_horizontal"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tvnombre_tarta_detalle"
+                android:text="nombre Tarta"
+                android:textStyle="bold"
+                android:textSize="20dp"
+                android:textColor="@color/primary_dark"
+                android:layout_gravity="center_horizontal"/>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/tvPrecio"
-            android:text="5,25€"
-            android:textStyle="bold"
-            android:textSize="20dp"
-            android:textColor="@color/accent"
-            android:paddingTop="10dp"
-            android:layout_gravity="center_horizontal"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tvPrecio_tarta"
+                android:text="5,25€"
+                android:textStyle="bold"
+                android:textSize="20dp"
+                android:textColor="@color/accent"
+                android:paddingTop="10dp"
+                android:layout_gravity="center_horizontal"/>
 
-    </LinearLayout>
+        </LinearLayout>
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -72,15 +72,15 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/tvDescripcion_Detalle"
-                    android:text="Exquisito Pan de Molde con una composición 100% harina de centeno integral"
+                    android:id="@+id/tvDescripcion_Tarta"
+                    android:text="Deliciosa tarta de zanahoria, elaborada con harina integral y cubierta de queso."
                     android:textSize="20dp"
                     android:textStyle="bold"
                     android:textColor="@color/white" />
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/tvPeso"
+                    android:id="@+id/tvPeso_tarta"
                     android:text="700gr"
                     android:textSize="20dp"
                     android:textStyle="bold"
@@ -94,23 +94,23 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:background="@color/primary"
-                android:layout_above="@+id/btnPedir"
+                android:layout_above="@+id/btnPedir_tarta"
                 >
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/tvCantidad"
-                android:text="Cantidad:"
-                android:textSize="25dp"
-                android:textStyle="bold"
-                android:textColor="@color/white"
-                android:padding="18dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tvCuantas"
+                    android:text="Cantidad:"
+                    android:textSize="25dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/white"
+                    android:padding="18dp"/>
 
                 <EditText
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/edtCantidad"
+                    android:id="@+id/edtCuantas"
                     android:hint="Cuantos quieres?"
                     android:inputType="number"/>
 
@@ -123,7 +123,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Quiero"
-                android:id="@+id/btnPedir"
+                android:id="@+id/btnPedir_tarta"
                 android:textColor="@color/white"
                 android:background="@color/accent"
                 android:textSize="15dp"
@@ -135,3 +135,4 @@
     </LinearLayout>
 
 </RelativeLayout>
+

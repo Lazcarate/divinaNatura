@@ -1,4 +1,4 @@
-package com.luisazcarate.divinanatura.Adapter;
+package com.luisazcarate.divinanatura.ViewHolder;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;

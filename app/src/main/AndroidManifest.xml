@@ -37,6 +37,7 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".ProductosActivity" />
         </activity>
+        <activity android:name=".Detalle_Tarta_Activity"></activity>
     </application>
 
 </manifest>
