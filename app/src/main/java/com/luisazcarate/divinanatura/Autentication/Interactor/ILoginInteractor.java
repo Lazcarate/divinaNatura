@@ -11,9 +11,9 @@ public interface ILoginInteractor {
 
     interface Callbacks {
 
-        void onErrorEmail(String msg);
+        void onErrorEmail();
 
-        void onErrorPassword(String msg);
+        void onErrorPassword();
 
         void onSuccess();
 

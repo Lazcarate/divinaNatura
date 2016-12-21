@@ -13,4 +13,8 @@
     <string name="texxtoChat">Desde Divina Natura invitamos a nuestros usuarios a participar
     en este foro para intercambiar opniones, gustos y sugerencias. Escribe aqui lo que quieras.</string>
     <string name="enviar">Send</string>
+    <string name="errorEmail">Error email</string>
+    <string name="msgEmailvacio">Debe introducir algún email</string>
+    <string name="msgEmailincorrecto">Formato de email incorrecto</string>
+    <string name="btnok">Entendido</string>
 </resources>

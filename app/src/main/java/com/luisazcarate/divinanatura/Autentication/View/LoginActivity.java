@@ -1,16 +1,18 @@
 package com.luisazcarate.divinanatura.Autentication.View;
 
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.design.widget.TextInputEditText;
+import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.text.Editable;
-import android.text.TextWatcher;
 import android.view.KeyEvent;
 import android.view.View;
+import android.view.inputmethod.EditorInfo;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -21,6 +23,7 @@ import com.luisazcarate.divinanatura.Autentication.Presenter.ILoginPresenter;
 import com.luisazcarate.divinanatura.Autentication.Presenter.LoginPresenter;
 import com.luisazcarate.divinanatura.ProductosActivity;
 import com.luisazcarate.divinanatura.R;
+
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -37,6 +40,10 @@ public class LoginActivity extends AppCompatActivity implements IloginView {
     TextView enlaceRegistro;
     @Bind(R.id.login_progreso)
     ProgressBar progressBar;
+    @Bind(R.id.label_email)
+    TextInputLayout mLabelemail;
+    @Bind(R.id.label_password)
+    TextInputLayout mLabelpass;
     private ILoginPresenter mPresenter;
     private static final int REQUEST_SIGNUP = 0;
     private FirebaseAuth mAuth;
@@ -79,52 +86,23 @@ public class LoginActivity extends AppCompatActivity implements IloginView {
             }
         });
 
-    //Asignamos eventos a los Texts
-
-        email.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-
-            }
-
-            @Override
-            public void afterTextChanged(Editable editable) {
-
-            }
-        });
-
-        email.setOnEditorActionListener(new TextView.OnEditorActionListener() {
-            @Override
-            public boolean onEditorAction(TextView textView, int i, KeyEvent keyEvent) {
-                return false;
-            }
-        });
-
-        password.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-
-            }
-
-            @Override
-            public void afterTextChanged(Editable editable) {
-
-            }
-        });
         password.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
             public boolean onEditorAction(TextView textView, int i, KeyEvent keyEvent) {
-                return false;
+
+                boolean procesado = false;
+
+                if(i == EditorInfo.IME_ACTION_UNSPECIFIED){
+
+                    inicioSesion();
+
+                    //Para ocultar el teclado
+
+                    InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
+                    imm.hideSoftInputFromWindow(textView.getWindowToken(), 0);
+                }
+
+                return procesado;
             }
         });
         login.setOnClickListener(new View.OnClickListener() {
@@ -132,6 +110,9 @@ public class LoginActivity extends AppCompatActivity implements IloginView {
             public void onClick(View view) {
 
                 inicioSesion();
+
+                InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
+                imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
 
             }
         });
@@ -177,16 +158,19 @@ public class LoginActivity extends AppCompatActivity implements IloginView {
     }
 
     @Override
-    public void setEmailError(String msg) {
+    public void setEmailError() {
 
-        email.setError(msg);
+        mLabelemail.setError(getString(R.string.errorEmail));
+        email.setText("");
 
     }
 
-    @Override
-    public void setPasswordError(String msg) {
 
-        password.setError(msg);
+
+    @Override
+    public void setPasswordError() {
+
+        mLabelpass.setError(getString(R.string.errorPassVacio));
 
     }
 
@@ -241,6 +225,9 @@ public class LoginActivity extends AppCompatActivity implements IloginView {
                 this.finish();
             }
         }
+    }
+    private void cerrarTeclado(){
+
     }
 
 }

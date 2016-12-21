@@ -30,6 +30,8 @@ public class RecyclerView_fragment_panes extends Fragment {
     private FirebaseRecyclerAdapter mFirebaseAdapter;
 
 
+
+
     public RecyclerView_fragment_panes() {
         super();
     }

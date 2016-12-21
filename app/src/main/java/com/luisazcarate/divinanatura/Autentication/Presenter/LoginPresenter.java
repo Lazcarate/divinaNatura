@@ -37,16 +37,18 @@ public class LoginPresenter implements ILoginPresenter, ILoginInteractor.Callbac
 
 
     @Override
-    public void onErrorEmail(String msg) {
+    public void onErrorEmail() {
 
-        mLoginView.setEmailError(msg);
+        mLoginView.setEmailError();
+        mLoginView.hideProgress();
 
     }
 
     @Override
-    public void onErrorPassword(String msg) {
+    public void onErrorPassword() {
 
-        mLoginView.setPasswordError(msg);
+        mLoginView.setPasswordError();
+        mLoginView.hideProgress();
 
     }
 
@@ -54,6 +56,7 @@ public class LoginPresenter implements ILoginPresenter, ILoginInteractor.Callbac
     public void onSuccess() {
 
         mLoginView.aInicio();
+        mLoginView.hideProgress();
 
     }
 
@@ -61,7 +64,7 @@ public class LoginPresenter implements ILoginPresenter, ILoginInteractor.Callbac
     public void onFalloAuth(String msg) {
 
         mLoginView.showLoginError(msg);
-        //Debemos mandar a Registrarse
+        mLoginView.hideProgress();
 
     }
 
