@@ -226,8 +226,6 @@ public class LoginActivity extends AppCompatActivity implements IloginView {
             }
         }
     }
-    private void cerrarTeclado(){
 
-    }
 
 }
