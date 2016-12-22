@@ -26,79 +26,49 @@ public class SignUpInteractor implements ISignUPInteractor {
 
     }
 
-    private boolean isValidoEmail(String email, ISignUPInteractor.Callbacks callbacks){
 
-        boolean esValido = true;
+    public void inicioSesion (String email, String pass, String repass, final Callbacks callbacks) {
 
-        if(TextUtils.isEmpty(email)){
-            esValido = false;
-            callbacks.onErrorEmail("email vacio");
+        boolean onProblems = false;
+
+        //Validamos correo
+
+        if ((TextUtils.isEmpty(email)) || (!Patterns.EMAIL_ADDRESS.matcher(email).matches())) {
+            callbacks.onErrorEmail();
+            onProblems = true;
         }
-        if(!Patterns.EMAIL_ADDRESS.matcher(email).matches()){
-            esValido=false;
-            callbacks.onErrorEmail("email incorrecto");
-        }
-        return esValido ;
-    }
-
-    private boolean isValidoPassword(String pass, ISignUPInteractor.Callbacks callbacks){
-
-        boolean esValido = true;
-
+        //Validamos password
         if(TextUtils.isEmpty(pass)){
-            esValido = false;
-            callbacks.onErrorPassword("pass vacio");
+            callbacks.onErrorPassword();
+            onProblems = true;
         }
-        if(pass.length() < 4 || pass.length() > 10){
-            esValido = false;
-            callbacks.onErrorPassword("pass incorrecto");
-        }
-        return esValido ;
-
-    }
-
-
-    public void inicioSesion (String email, String pass, final Callbacks callbacks){
-
-        //boolean checkNom = isValidoNombre(nom, callbacks);
-        boolean checkEmail = isValidoEmail(email, callbacks);
-        boolean checkPass = isValidoPassword(pass, callbacks);
-
-
-        if(!(checkEmail && checkPass)){
-            return;
+        if(!(pass.equals(repass))){
+            callbacks.onRe_PasswordError();
+            onProblems = true;
         }
 
-       // signUp(nom, email, pass, callbacks);
-        signUp(email, pass, callbacks);
+        if(!onProblems){
+            //Logeamos
+            mFirebaseAuth.createUserWithEmailAndPassword(email, pass)
+                    .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                        //Retorna un objeto Task con el resultado de la comprobacion
+                        @Override
+                        public void onComplete(@NonNull Task<AuthResult> task) {
+                            //Si no fue un exito
+                            if(!task.isSuccessful()){
+                                callbacks.onFalloAuth(task.getException().getMessage());
 
-    }
+                            } else {
+                                //Si fue un exito
+                                callbacks.onSuccessSignup();
 
-
-    private void signUp(String email, String pass, final Callbacks callbacks) {
-
-        mFirebaseAuth.createUserWithEmailAndPassword(email, pass)
-                .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                    //Retorna un objeto Task con el resultado de la comprobacion
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        //Si fue un exito
-                        if (task.isSuccessful()) {
-                            callbacks.onSuccessSignup();
+                            }
                         }
-                        else {
-                            callbacks.onFalloAuth(task.getException().toString());
+                    });
+        }
+    }
 
-                        //Si no fue un exito
-                       // callbacks.onFalloAuth(task.getException().toString());
-                    }
-                }
-    });
+}
 
-
-
-
-                    }
-                }
 
 

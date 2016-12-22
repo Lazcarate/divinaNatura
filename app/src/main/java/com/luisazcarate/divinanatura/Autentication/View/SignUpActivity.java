@@ -2,6 +2,7 @@ package com.luisazcarate.divinanatura.Autentication.View;
 
 import android.content.Intent;
 import android.support.design.widget.TextInputEditText;
+import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -23,6 +24,10 @@ public class SignUpActivity extends AppCompatActivity implements ISignUpView {
     @Bind(R.id.input_reEnterPassword)TextInputEditText re_pass_Registro;
     @Bind(R.id.btn_signup)Button btnRegistro;
     @Bind(R.id.link_login)TextView enlaceLogin;
+    @Bind(R.id.label_nombre)TextInputLayout label_nome;
+    @Bind(R.id.label_email_Signup) TextInputLayout label_email_signup;
+    @Bind(R.id.label_pass_signup) TextInputLayout label_pass_sigup;
+    @Bind(R.id.label_pass_signup_re) TextInputLayout label_pass_re;
     private SignUpPresenter mSignupPresenter;
 
 
@@ -67,24 +72,40 @@ public class SignUpActivity extends AppCompatActivity implements ISignUpView {
     }
 
     @Override
-    public void setEmailError(String msg) {
+    public void set_re_PasswordError() {
+
+        label_pass_re.setError(getString(R.string.errorPass_no_coincide));
+        re_pass_Registro.setText("");
+    }
+
+    @Override
+    public void setEmailError() {
+
+        label_email_signup.setError(getString(R.string.errorEmail));
+        email_Registro.setText("");
 
     }
 
     @Override
-    public void setPasswordError(String msg) {
+    public void setPasswordError() {
 
+        label_pass_sigup.setError(getString(R.string.errorPassNovalido));
+        pass_Registro.setText("");
 
     }
+
+
     public void registro(){
 
-        String nom = nombre_Registro.getText().toString().trim();
+        //String nom = nombre_Registro.getText().toString().trim();
         String mail = email_Registro.getText().toString().trim();
         String pass = pass_Registro.getText().toString().trim();
+        String re_pass = re_pass_Registro.getText().toString();
 
-        mSignupPresenter.inicioRegistro(mail, pass);
+        mSignupPresenter.inicioRegistro(mail, pass, re_pass);
 
     }
+
 
 }
 

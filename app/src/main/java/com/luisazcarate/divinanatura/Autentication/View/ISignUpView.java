@@ -7,7 +7,8 @@ package com.luisazcarate.divinanatura.Autentication.View;
 public interface ISignUpView {
 
     void aLogin();
-    void setEmailError(String msg);
-    void setPasswordError(String msg);
+    void setEmailError();
+    void setPasswordError();
     void showSignUpError(String msg);
+    void set_re_PasswordError();
 }

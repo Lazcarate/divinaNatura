@@ -6,5 +6,6 @@ package com.luisazcarate.divinanatura.Autentication.Presenter;
 
 public interface ISignUpIPresenter {
 
-    void inicioRegistro(String email, String password);
+    void inicioRegistro(String email, String password, String re_password);
+
 }

@@ -6,17 +6,19 @@ package com.luisazcarate.divinanatura.Autentication.Interactor;
 
 public interface ISignUPInteractor {
 
-    void inicioSesion(String email, String pass, ISignUPInteractor.Callbacks callbacks);
+    void inicioSesion(String email, String pass, String repass, ISignUPInteractor.Callbacks callbacks);
 
     interface Callbacks{
 
-        void onErrorEmail(String msg);
+        void onErrorEmail();
 
-        void onErrorPassword(String msg);
+        void onErrorPassword();
 
         void onSuccessSignup();
 
         void onFalloAuth(String msg);
+
+        void onRe_PasswordError();
 
 
     }
