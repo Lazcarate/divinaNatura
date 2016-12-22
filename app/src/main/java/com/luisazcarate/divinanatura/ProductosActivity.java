@@ -1,5 +1,6 @@
 package com.luisazcarate.divinanatura;
 
+import android.content.Intent;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentPagerAdapter;
@@ -11,6 +12,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.luisazcarate.divinanatura.Autentication.View.LoginActivity;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -56,6 +58,8 @@ public class ProductosActivity extends AppCompatActivity {
         int id = item.getItemId();
         if(id == R.id.logout){
             mAuth.signOut();
+            startActivity(new Intent(ProductosActivity.this, LoginActivity.class));
+            finish();
             return true;
         }
         return super.onOptionsItemSelected(item);

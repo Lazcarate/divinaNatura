@@ -59,10 +59,12 @@ public class RecyclerView_fragment_panes extends Fragment {
             }
         };
 
+        mFirebaseAdapter.notifyDataSetChanged();
         recyclerViewPanes.setHasFixedSize(true);
         GridLayoutManager glm = new GridLayoutManager(getActivity(), 2);
         recyclerViewPanes.setLayoutManager(glm);
         recyclerViewPanes.setAdapter(mFirebaseAdapter);
+
 
     }
 
