@@ -75,6 +75,7 @@ public class RecyclerView_fragment_chat extends Fragment implements View.OnClick
                         if (databaseError != null) {
                             Toast.makeText(getActivity(), "Mensaje erroneo", Toast.LENGTH_SHORT).show();
                         }
+                        Toast.makeText(getActivity(), "Mensaje enviado", Toast.LENGTH_SHORT).show();
                     }
                 });
 
