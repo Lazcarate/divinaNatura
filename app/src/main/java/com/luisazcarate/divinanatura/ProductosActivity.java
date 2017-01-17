@@ -56,11 +56,19 @@ public class ProductosActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
 
         int id = item.getItemId();
-        if(id == R.id.logout){
-            mAuth.signOut();
-            startActivity(new Intent(ProductosActivity.this, LoginActivity.class));
-            finish();
-            return true;
+        switch(id){
+            case R.id.logout:
+
+                mAuth.signOut();
+                startActivity(new Intent(ProductosActivity.this, LoginActivity.class));
+                finish();
+                break;
+
+            case R.id.chat:
+
+                startActivity(new Intent(ProductosActivity.this, ChatActivity.class));
+                break;
+
         }
         return super.onOptionsItemSelected(item);
     }
@@ -73,7 +81,7 @@ public class ProductosActivity extends AppCompatActivity {
             Fragment[] fragments = new Fragment[]{
                     new RecyclerView_fragment_panes(),
                     new RecyclerView_fragment_tartas(),
-                    new RecyclerView_fragment_chat()
+
             };
 
             @Override
@@ -93,9 +101,8 @@ public class ProductosActivity extends AppCompatActivity {
 
         viewPager.setAdapter(fragmentPagerAdapter);
         tabLayout.setupWithViewPager(viewPager);
-        tabLayout.getTabAt(0).setIcon(R.drawable.pan_48);
-        tabLayout.getTabAt(1).setIcon(R.drawable.cupcake_48);
-        tabLayout.getTabAt(2).setIcon(R.drawable.charla_48);
+        tabLayout.getTabAt(0).setIcon(R.drawable.panblanco);
+        tabLayout.getTabAt(1).setIcon(R.drawable.pastelblanco);
 
     }
 

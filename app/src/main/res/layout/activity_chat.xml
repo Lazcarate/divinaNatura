@@ -1,15 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools= "http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/primary">
 
     <android.support.v7.widget.RecyclerView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/rvChat">
-
+        android:layout_height="0dp"
+        android:id="@+id/rvChat"
+        android:layout_weight="1"
+        android:divider= "@color/white"
+        android:dividerHeight= "5dp"
+        android:fasrScrollEnabled= "true"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        tools:listitem = "@layout/chat_list_item">
     </android.support.v7.widget.RecyclerView>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/aluminum"
+        android:gravity="center_vertical"
+        android:padding="5dp">
 
-</FrameLayout>
+        <EditText
+            android:id="@+id/edMensaje"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Escribe aqui tu mensaje"
+            android:layout_marginTop="20dp"/>
+
+        <android.support.v7.widget.AppCompatButton
+            android:id="@+id/btn_Enviar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_gravity="bottom"
+            android:padding="12dp"
+            android:text="@string/enviar"
+            android:elevation="7dp" />
+    </LinearLayout>
+
+</LinearLayout>

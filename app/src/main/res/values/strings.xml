@@ -18,4 +18,5 @@
     <string name="msgEmailincorrecto">Formato de email incorrecto</string>
     <string name="btnok">Entendido</string>
     <string name="errorPass_no_coincide">Password no coinciden</string>
+    <string name="menu_chat">Chat</string>
 </resources>

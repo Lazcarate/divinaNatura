@@ -34,13 +34,7 @@ public class Chat_ViewHolder extends RecyclerView.ViewHolder {
         tvautor.setText(chat.getAutor());
         tvmensaje.setText(chat.getMensaje());
     }
-   /*public void setName(String name) {
-       tvautor.setText(name);
-   }
 
-    public void setText(String text) {
-        tvmensaje.setText(text);
-    }*/
 }
 
 
