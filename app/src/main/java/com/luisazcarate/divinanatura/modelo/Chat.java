@@ -8,15 +8,15 @@ public class Chat {
 
     String autor;
     String mensaje;
-    String uid;
+    Long hora;
 
     public Chat() {
     }
 
-    public Chat(String autor, String mensaje, String uid) {
+    public Chat(String autor, String mensaje, Long hora) {
         this.autor = autor;
         this.mensaje = mensaje;
-        this.uid = uid;
+        this.hora = hora;
     }
 
     public String getAutor() {
@@ -27,9 +27,7 @@ public class Chat {
         return mensaje;
     }
 
-    public String getUid() {
-        return uid;
-    }
+
 
     public void setAutor(String autor) {
         this.autor = autor;
@@ -39,7 +37,7 @@ public class Chat {
         this.mensaje = mensaje;
     }
 
-    public void setUid(String uid) {
-        this.uid = uid;
+    public Long getHora() {
+        return hora;
     }
 }
