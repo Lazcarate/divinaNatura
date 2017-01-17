@@ -10,30 +10,43 @@
     android:background="@color/primary_dark"
     card_view:cardBackgroundColor="@color/primary_dark">
 
-    <LinearLayout
+    <RelativeLayout
         android:id="@+id/message"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:layout_marginLeft="26dp"
         android:layout_marginRight="26dp"
-        android:orientation="vertical"
         android:padding="10dp">
 
-        <TextView
-            style="@style/TextAppearance.AppCompat.Medium"
-            android:id="@+id/textomensaje"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textStyle="bold"
-            tools:text="Hola, Divina Natura"/>
+    <TextView
+        style="@style/TextAppearance.AppCompat.Small"
+        android:id="@+id/nomautor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="Luis"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"/>
 
-        <TextView
-            style="@style/TextAppearance.AppCompat.Small"
-            android:id="@+id/nomautor"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            tools:text="Luis"/>
+    <TextView
+        style="@style/TextAppearance.AppCompat.Small"
+        android:id="@+id/msgtime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/nomautor"
+        android:layout_alignParentEnd="true"
+        tools:text="15:40"/>
 
-    </LinearLayout>
+    <TextView
+        style="@style/TextAppearance.AppCompat.Medium"
+        android:id="@+id/textomensaje"
+        android:textStyle="bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/nomautor"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="5dp"
+        tools:text="Muy rica la tarta de zanahorias"/>
+    </RelativeLayout>
 
-   </android.support.v7.widget.CardView>
+
+</android.support.v7.widget.CardView>

@@ -18,6 +18,7 @@ public class Chat_ViewHolder extends RecyclerView.ViewHolder {
     View view;
     private final TextView tvautor;
     private final TextView tvmensaje;
+    private final TextView tvTime;
 
 
     public Chat_ViewHolder(View itemView) {
@@ -27,12 +28,15 @@ public class Chat_ViewHolder extends RecyclerView.ViewHolder {
         mContext = view.getContext();
         tvautor = (TextView) view.findViewById(R.id.nomautor);
         tvmensaje = (TextView) view.findViewById(R.id.textomensaje);
+        tvTime = (TextView) view.findViewById(R.id.msgtime);
 
     }
     public void bindChat(final Chat chat){
 
         tvautor.setText(chat.getAutor());
         tvmensaje.setText(chat.getMensaje());
+        
+        tvTime.setText(chat.getHora());
     }
 
 }
