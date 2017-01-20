@@ -11,7 +11,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".Autentication.View.LoginActivity">
-            <intent-filter>
+           <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -32,7 +32,7 @@
         </service>
 
         <activity android:name=".Notificaciones.NotificacionActivity" />
-        <activity android:name=".ChatActivity"/>
+        <activity android:name=".ChatActivity"></activity>
 
         <activity android:name=".Detalle_Tarta_Activity"></activity>
     </application>
