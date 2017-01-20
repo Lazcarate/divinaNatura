@@ -13,6 +13,7 @@ import android.view.MenuItem;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.luisazcarate.divinanatura.Autentication.View.LoginActivity;
+import com.luisazcarate.divinanatura.modelo.Chat;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -67,7 +68,9 @@ public class ProductosActivity extends AppCompatActivity {
             case R.id.chat:
 
                 startActivity(new Intent(ProductosActivity.this, ChatActivity.class));
-                break;
+
+                finish();
+
 
         }
         return super.onOptionsItemSelected(item);

@@ -32,11 +32,8 @@
         </service>
 
         <activity android:name=".Notificaciones.NotificacionActivity" />
-        <activity android:name=".ChatActivity">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".ProductosActivity" />
-        </activity>
+        <activity android:name=".ChatActivity"/>
+
         <activity android:name=".Detalle_Tarta_Activity"></activity>
     </application>
 

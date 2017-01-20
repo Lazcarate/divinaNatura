@@ -8,15 +8,15 @@ public class Chat {
 
     String autor;
     String mensaje;
-    Long hora;
+    //Long hora;
 
     public Chat() {
     }
 
-    public Chat(String autor, String mensaje, Long hora) {
+    public Chat(String autor, String mensaje) {
         this.autor = autor;
         this.mensaje = mensaje;
-        this.hora = hora;
+        //this.hora = hora;
     }
 
     public String getAutor() {
@@ -37,7 +37,7 @@ public class Chat {
         this.mensaje = mensaje;
     }
 
-    public Long getHora() {
+   /* public Long getHora() {
         return hora;
-    }
+    }*/
 }

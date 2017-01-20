@@ -7,6 +7,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
@@ -30,7 +31,7 @@ public class ChatActivity extends AppCompatActivity implements View.OnClickListe
     @Bind(R.id.rvChat)
     RecyclerView rvChateo;
     @Bind(R.id.btn_Enviar)
-    Button enviarButton;
+    ImageButton enviarButton;
     @Bind(R.id.edMensaje)
     EditText mensajeEd;
 
@@ -44,26 +45,30 @@ public class ChatActivity extends AppCompatActivity implements View.OnClickListe
         firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
         enviarButton.setOnClickListener(this);
         setUpRecyclerChat();
+        setupAdapter();
     }
 
     private void setUpRecyclerChat() {
 
-        Query ultimosCincuenta = mChatRef.limitToLast(50);
+        //Query ultimosCincuenta = mChatRef.limitToLast(50);
 
         menRecyclerAdapter = new FirebaseRecyclerAdapter<Chat, Chat_ViewHolder>(Chat.class, R.layout.chat_list_item,
-                Chat_ViewHolder.class, ultimosCincuenta) {
+                Chat_ViewHolder.class, mChatRef) {
             @Override
             protected void populateViewHolder(Chat_ViewHolder viewHolder, Chat model, int position) {
 
                 viewHolder.bindChat(model);
             }
         };
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
-        linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
-        linearLayoutManager.setReverseLayout(false);
-        rvChateo.setHasFixedSize(false);
-        rvChateo.setLayoutManager(linearLayoutManager);
+        //LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
+        //linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
+        //linearLayoutManager.setReverseLayout(false);
+        //rvChateo.setHasFixedSize(true);
+    }
+    private void setupAdapter() {
+        rvChateo.setLayoutManager(new LinearLayoutManager(this));
         rvChateo.setAdapter(menRecyclerAdapter);
+        menRecyclerAdapter.notifyDataSetChanged();
     }
 
     @Override
@@ -79,15 +84,12 @@ public class ChatActivity extends AppCompatActivity implements View.OnClickListe
 
         int id = view.getId();
 
-        switch (id) {
+        if (id == R.id.btn_Enviar) {
 
-            case R.id.btn_Enviar:
-
-                String uid = firebaseUser.getUid();
                 String name = "User " + firebaseUser.getEmail();
                 String mensagge = mensajeEd.getText().toString();
 
-                Chat chat = new Chat(name, mensagge, uid);
+                Chat chat = new Chat(name, mensagge);
                 mChatRef.push().setValue(chat, new DatabaseReference.CompletionListener() {
                     @Override
                     public void onComplete(DatabaseError databaseError, DatabaseReference reference) {
