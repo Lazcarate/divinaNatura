@@ -1,10 +1,12 @@
 package com.luisazcarate.divinanatura;
 
+import android.content.Context;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
@@ -86,19 +88,31 @@ public class ChatActivity extends AppCompatActivity implements View.OnClickListe
 
         if (id == R.id.btn_Enviar) {
 
-                String name = "User " + firebaseUser.getEmail();
-                String mensagge = mensajeEd.getText().toString();
+               enviarMensaje();
 
-                Chat chat = new Chat(name, mensagge);
-                mChatRef.push().setValue(chat, new DatabaseReference.CompletionListener() {
-                    @Override
-                    public void onComplete(DatabaseError databaseError, DatabaseReference reference) {
-                        if (databaseError != null) {
-                            Toast.makeText(ChatActivity.this, "Mensaje erroneo", Toast.LENGTH_SHORT).show();
-                        }
-                        Toast.makeText(ChatActivity.this, "Mensaje enviado", Toast.LENGTH_SHORT).show();
-                    }
-                });
+            InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
+            imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
         }
     }
-}
+    private void enviarMensaje(){
+
+
+        String name = firebaseUser.getEmail();
+        String mensagge = mensajeEd.getText().toString();
+
+        Chat chat = new Chat(name, mensagge);
+        mChatRef.push().setValue(chat, new DatabaseReference.CompletionListener() {
+            @Override
+            public void onComplete(DatabaseError databaseError, DatabaseReference reference) {
+                if (databaseError != null) {
+                    Toast.makeText(ChatActivity.this, "Mensaje erroneo", Toast.LENGTH_SHORT).show();
+                }
+                else {
+                    mensajeEd.setText("");
+                    Toast.makeText(ChatActivity.this, "Mensaje enviado", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+    }
+    }
+

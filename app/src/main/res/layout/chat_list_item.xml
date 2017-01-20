@@ -26,7 +26,8 @@
         android:layout_height="wrap_content"
         tools:text="Luis"
         android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true"/>
+        android:layout_alignParentStart="true"
+        android:textColor="@color/colorPrimaryText"/>
 
     <TextView
         style="@style/TextAppearance.AppCompat.Medium"
@@ -37,7 +38,8 @@
         android:layout_below="@+id/nomautor"
         android:layout_alignParentStart="true"
         android:layout_marginTop="5dp"
-        tools:text="Muy rica la tarta de zanahorias"/>
+        tools:text="Muy rica la tarta de zanahorias"
+        android:textColor="@color/colorPrimaryText"/>
     </LinearLayout>
 
 
