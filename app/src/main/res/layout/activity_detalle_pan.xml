@@ -114,10 +114,7 @@
                     android:hint="Cuantos quieres?"
                     android:inputType="number"/>
 
-
-
             </LinearLayout>
-
 
             <Button
                 android:layout_width="match_parent"
