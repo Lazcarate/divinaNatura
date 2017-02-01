@@ -1,5 +1,7 @@
 package com.luisazcarate.divinanatura.ViewHolder;
 
+import android.app.Activity;
+import android.app.ActivityOptions;
 import android.content.Context;
 import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
@@ -23,7 +25,6 @@ public class Panes_ViewHolder extends RecyclerView.ViewHolder{
 
     private static final int MAX_WIDTH = 170;
     private static final int MAX_HEIGHT = 130;
-
     Context mContext;
     View view;
     private ImageView imgPan;
@@ -50,7 +51,7 @@ public class Panes_ViewHolder extends RecyclerView.ViewHolder{
         txtNombre.setText(mPan.getNombre());
         imgPan.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
+            public void onClick(View v) {
 
                 Intent intent = new Intent(mContext, Detalle_Pan_Activity.class);
                 intent.putExtra("mPan", Parcels.wrap(mPan));
