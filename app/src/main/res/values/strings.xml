@@ -10,8 +10,6 @@
     <string name="menu_logout">Cerrar Sesion</string>
     <string name="nombre">Centeno y trigo con frutas</string>
     <string name="nombre_tarta">Tarta de zanahorias</string>
-    <string name="texxtoChat">Desde Divina Natura invitamos a nuestros usuarios a participar
-    en este foro para intercambiar opniones, gustos y sugerencias. Escribe aqui lo que quieras.</string>
     <string name="enviar">Send</string>
     <string name="errorEmail">Error email</string>
     <string name="msgEmailvacio">Debe introducir algún email</string>
@@ -19,4 +17,7 @@
     <string name="btnok">Entendido</string>
     <string name="errorPass_no_coincide">Password no coinciden</string>
     <string name="menu_chat">Chat</string>
+    <string name="soy_miembro">Ya estas registrado?, inicia sesion</string>
+    <string name="no_cuenta">No tienes cuenta?, crea una.</string>
+    <string name="crea_cuenta">Crear cuenta</string>
 </resources>
