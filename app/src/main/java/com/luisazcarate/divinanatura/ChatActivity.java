@@ -21,7 +21,6 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.luisazcarate.divinanatura.ViewHolder.Chat_ViewHolder;
 import com.luisazcarate.divinanatura.modelo.Chat;
-
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
@@ -52,8 +51,6 @@ public class ChatActivity extends AppCompatActivity implements View.OnClickListe
 
     private void setUpRecyclerChat() {
 
-        //Query ultimosCincuenta = mChatRef.limitToLast(50);
-
         menRecyclerAdapter = new FirebaseRecyclerAdapter<Chat, Chat_ViewHolder>(Chat.class, R.layout.chat_list_item,
                 Chat_ViewHolder.class, mChatRef) {
             @Override
@@ -62,10 +59,7 @@ public class ChatActivity extends AppCompatActivity implements View.OnClickListe
                 viewHolder.bindChat(model);
             }
         };
-        //LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
-        //linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
-        //linearLayoutManager.setReverseLayout(false);
-        //rvChateo.setHasFixedSize(true);
+
     }
     private void setupAdapter() {
         rvChateo.setLayoutManager(new LinearLayoutManager(this));

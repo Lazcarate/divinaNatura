@@ -40,7 +40,6 @@ public class ProductosActivity extends AppCompatActivity {
         setUpViewPager();
 
 
-
         if(toolbar != null){
             setSupportActionBar(toolbar);
         }

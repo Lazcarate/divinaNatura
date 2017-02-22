@@ -206,6 +206,9 @@ public class LoginActivity extends AppCompatActivity implements IloginView {
         Intent intent = new Intent(LoginActivity.this, SignUpActivity.class);
         startActivityForResult(intent, REQUEST_SIGNUP);
         this.finish();
+        //Animacion para ir a la siguiente actividad
+
+
         overridePendingTransition(R.anim.push_left_in, R.anim.push_left_out);
 
     }

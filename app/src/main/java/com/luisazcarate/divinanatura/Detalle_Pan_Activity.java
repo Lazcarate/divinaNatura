@@ -87,6 +87,7 @@ public class Detalle_Pan_Activity extends AppCompatActivity implements View.OnCl
         String NombrePan = nombrePan_Detalle.getText().toString();
         int cant = Integer.valueOf(edCantidad.getText().toString());
         String emailUs = mFirebaseUser.getEmail();
+
         Pedido ped = new Pedido(NombrePan, cant, emailUs);
         mDataBase.push().setValue(ped);
 

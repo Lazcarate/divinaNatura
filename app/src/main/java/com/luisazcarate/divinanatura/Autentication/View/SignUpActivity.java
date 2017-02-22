@@ -51,6 +51,7 @@ public class SignUpActivity extends AppCompatActivity implements ISignUpView {
         });
 
         mSignupPresenter = new SignUpPresenter(this);
+
     }
 
     @Override
@@ -59,6 +60,7 @@ public class SignUpActivity extends AppCompatActivity implements ISignUpView {
         //Generamos un intent a la actividad Principal
         startActivity(new Intent(SignUpActivity.this, LoginActivity.class));
         //Finalizamos la actividad en la que estamos
+        overridePendingTransition(R.anim.push_left_in, R.anim.push_left_out);
         this.finish();
     }
 
@@ -97,7 +99,6 @@ public class SignUpActivity extends AppCompatActivity implements ISignUpView {
 
     public void registro(){
 
-        //String nom = nombre_Registro.getText().toString().trim();
         String mail = email_Registro.getText().toString().trim();
         String pass = pass_Registro.getText().toString().trim();
         String re_pass = re_pass_Registro.getText().toString();

@@ -88,7 +88,7 @@ public class Detalle_Tarta_Activity extends AppCompatActivity implements View.On
 
     private void hacerPedidoTartas() {
 
-        mDataBaseTarta = FirebaseDatabase.getInstance().getReference().child(Constantes.REF_TARTAS);
+        mDataBaseTarta = FirebaseDatabase.getInstance().getReference().child(Constantes.REF_PEDIDOS);
         String NombreTarta = nombre_tartaDetalle.getText().toString();
         int cant = Integer.valueOf(edCuanto.getText().toString());
         String emailUs = mFirebaseUser.getEmail();

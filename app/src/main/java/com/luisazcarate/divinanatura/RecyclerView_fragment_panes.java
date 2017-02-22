@@ -42,7 +42,9 @@ public class RecyclerView_fragment_panes extends Fragment {
 
         View view = inflater.inflate(R.layout.fragment_panes, container, false);
         ButterKnife.bind(this, view);
+
         mPanReference = FirebaseDatabase.getInstance().getReference().child(Constantes.REF_PANES);
+
         setUpFireBaseAdapter();
 
         return view;

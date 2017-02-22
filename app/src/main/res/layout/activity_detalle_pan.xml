@@ -58,7 +58,7 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="150dp"
+                android:layout_height="200dp"
                 android:orientation="vertical"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentLeft="true"
@@ -68,6 +68,7 @@
                 android:paddingRight="30dp"
                 android:paddingBottom="20dp"
                 android:background="@color/primary_dark">
+
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -86,6 +87,7 @@
                     android:textStyle="bold"
                     android:textColor="@color/white"
                     android:paddingTop="12dp"/>
+
             </LinearLayout>
 
 
@@ -94,8 +96,7 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:background="@color/primary"
-                android:layout_above="@+id/btnPedir"
-                >
+                android:layout_above="@+id/btnPedir">
 
             <TextView
                 android:layout_width="wrap_content"
